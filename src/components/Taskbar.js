@@ -1,24 +1,40 @@
-/** REUSABLE TASKBAR COMPONENTS */
-import taskbarIcon from "../assets/taskbar/windows10_32.png"
+/** REUSABLE TASKBAR COMPONENT */
+import startIcon from "../assets/taskbar/windows10_32.png";
+import explorerIcon from "../assets/taskbar/file_explorer.png";
 
-function Taskbar(){
-    return(
-        <div className="taskbar">
-            {/** Start logo */}
-            <div className="taskbar-item">
-                <img src={taskbarIcon} alt="taskbar" className="taskbar-img" />
-            </div>
+function Taskbar({ openApps, activeApp, onAppClick, onStartClick }) {
+  return (
+    <div className="taskbar">
 
-            <div className="taskbar-item">Projects</div>
-            <div className="taskbar-item">Skills</div>
+      {/* Start + Explorer */}
+      <div className="start-btn">
+        <img src={startIcon} alt="Start" className="taskbar-img" onClick={onStartClick} />
+      </div>
 
-            <div className="taskbar-clock">
-                {new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit'})}
-            </div>
+      {/* Open apps */}
 
+      {openApps.map((app) => (
+        <div
+          key={app}
+          className={`taskbar-item ${activeApp === app ? "active" : ""}`}
+          onClick={() => onAppClick(app)}
+        >
+          <img src={explorerIcon} alt={app} />
         </div>
+      ))}
 
-    );
+
+      {/* Clock */}
+      <div className="taskbar-clock">
+        {new Date().toLocaleTimeString([], {
+          hour: "2-digit",
+          minute: "2-digit",
+          hour12: true,
+
+        })}
+      </div>
+    </div>
+  );
 }
 
 export default Taskbar;

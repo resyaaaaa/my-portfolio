@@ -1,18 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Sour+Gummy&display=swap");
+
 body {
   margin: 0;
   padding: 0;
   height: 100%;
   overflow: hidden;
-  background: url("./assets/bg/win-wallpaper.png") no-repeat center center fixed;
+  background: url("./assets/bg/1.png") no-repeat center center fixed;
   background-size: cover;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body, .desktop, .window, .taskbar {
-  cursor: url("assets/cursor/cartoon_cursor.png"), auto;
+body,
+.desktop,
+.window,
+.taskbar,
+.taskbar-item {
+  cursor: url("assets/cursor/puffy_cursor.png"), auto;
 }
 
+.lock-btn, .start-btn, .close-btn {
+  cursor: url(./assets/cursor/pointer_cursor.png), pointer;
+}
 
+/*============================================================DESKTOP*/
 .desktop {
   min-height: 100vh;
   position: relative;
@@ -23,7 +33,7 @@ body, .desktop, .window, .taskbar {
 .desktop-icon {
   width: 80px;
   text-align: center;
-  
+
   margin: 10px;
 }
 
@@ -45,42 +55,93 @@ body, .desktop, .window, .taskbar {
   object-fit: contain;
 }
 
+/*============================================================TASKBAR*/
 .taskbar {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   height: 40px;
-  background: #fff8f0;
+  background: rgba(255, 248, 240, 0.4);
+  backdrop-filter: blur(8px);
   display: flex;
   align-items: center;
   justify-content: space-between;
+  box-sizing: border-box;
   padding: 0 10px;
   font-family: "Comic Sans MS", cursive;
-  box-shadow: 0 -2px 6px rgba(0, 0, 0, 4);
+  box-shadow: 0 -2px 6px rgba(0, 0, 0, 3);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
   z-index: 50;
-  
+
 }
 
 .taskbar-item {
-  margin-right: 15px;
-  font-weight: bold;
+  width: 36px;
+  height: 36px;
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: transform 0.15s ease, background 0.15s ease;
+  animation: taskbarPop 0.25s ease;
+}
+
+.taskbar-item.active {
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 0 6px rgba(255, 255, 255, 0.6);
+  transform: scale(0.9);
+  animation: activePulse 1.5s infinite;
+}
+
+.taskbar-item img {
+  width: 36px;
+  height: 36px;
 }
 
 .taskbar-clock {
   color: black;
   font-size: 14px;
   font-weight: bold;
+  white-space: nowrap;
+  margin-left: auto;
 }
 
 .taskbar-img {
-  width: 32px;
-  height: 32px;
+  width: 36px;
+  height: 36px;
   object-fit: contain;
   margin-right: 15px;
 }
 
+@keyframes taskbarPop {
+  0% {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  70% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 
+@keyframes activePulse {
+  0% {
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.8);
+  }
+  100% {
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.4);
+  }
+}
+
+/*============================================================WINDOW*/
 /* WINDOW */
 .window {
   position: absolute;
@@ -112,8 +173,10 @@ body, .desktop, .window, .taskbar {
   padding: 12px;
   max-height: 300px;
   overflow-y: auto;
+  pointer-events: auto;
 }
 
+/*============================================================FOLDER*/
 .folder {
   background: #fff;
   display: flex;
@@ -136,10 +199,134 @@ body, .desktop, .window, .taskbar {
   margin-right: 8px;
 }
 
+.folder-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 80px);
+  gap: 15px;
+  padding: 12px;
+}
 
+.folder-icon {
+  text-align: center;
+}
 
+.folder-icon img {
+  width: 48px;
+  height: 48px;
+}
+
+/*============================================================BUTTON*/
 .close-btn {
   width: 24px;
   height: 24px;
-  
+  background: transparent;
+  border: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.close-btn img {
+  width: 100%;
+  height: 100%;
+}
+
+/*============================================================START*/
+.start-explorer {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 420px;
+  background: rgba(255, 248, 240, 0.95);
+  border-radius: 14px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(250, 250, 250, 0.193);
+  z-index: 100;
+  font-family: "Comic Sans MS", cursive;
+  font-weight: bold;
+}
+
+.start-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.start-grid div {
+  text-align: center;
+}
+
+.start-grid img {
+  width: 48px;
+  height: 48px;
+}
+.start-grid p {
+  margin-top: 6px;
+  font-size: 12px;
+  color: black;
+}
+
+.start-btn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.start-btn img {
+  width: 36px;
+  height: 36px;
+}
+/*============================================================LOCKSCREEN*/
+.lock-screen {
+  position: fixed;
+  inset: 0;
+  background: url(./assets/bg/1.png);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.lock-card {
+  width: 300px;
+  padding: 40px;
+  border-radius: 40px;
+  backdrop-filter: blur(15px);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  font-family: "Sour Gummy", cursive;
+}
+
+.lock-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+.lock-name {
+  color: white;
+  margin-bottom: 20px;
+  font-weight: 500px;
+}
+
+.lock-btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 12px;
+  border: none;
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+  font-size: 16px;
+}
+
+.lock-btn:hover {
+  background: rgba(255, 255, 255, 0.45);
 }

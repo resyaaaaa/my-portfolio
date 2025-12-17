@@ -1,9 +1,9 @@
 /** SHOW FOLDER ICON WITH LABEL UNDER IT */
-function DesktopIcon({ label, icon, onClick }) {
+function DesktopIcon({ title, icon, onDoubleClick }) {
     return (
-        <div className="desktop-icon" onClick={onClick}>
-            <img src={icon} alt={label} className="icon-img" />
-            <p>{label}</p></div>
+        <div className="desktop-icon" onDoubleClick={onDoubleClick}>
+            <img src={icon} alt={title} className="icon-img" />
+            <p>{title}</p></div>
     );
 }
 

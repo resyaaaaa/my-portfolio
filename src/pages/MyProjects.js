@@ -1,42 +1,32 @@
-import folderIcon from "../assets/icons/6.png";
-import closeIcon from "../assets/icons/close.png";
+import FolderIcon from "../components/FolderIcon";
+import fileIcon from "../assets/icons/folder.png";
 
-function MyProjects({ onClose }) {
-    return (
-        <div className="window">
-            {/** window top bar */}
-            <div className="window-header">
-                <span>Projects</span>
+function MyProjects() {
+  return (
+    <div className="folder-grid">
+      {/* Each folder in the Projects window */}
+      <FolderIcon
+        title="echoeyes"
+        subtitle="A mobile-based object Detection and Recognition System for visually impaired users with text-to-speech using YOLOv8n " 
+        icon={fileIcon}
+        onClick={() => alert("Open echoeyes App")}
+      />
 
-                {/** close button */}
-                <img src={closeIcon} alt="close" className="close-btn" onClick={onClose}
-                />
+      <FolderIcon
+        title="Workshop Management System"
+        subtitle="A mobile-based workshop management system to handle workshop owner and foreman schedules, payroll and inventory management"
+        icon={fileIcon}
+        onClick={() => alert("Open WMS App")}
+      />
 
-            </div>
-
-            {/**window content */}
-            <div className="window-body">
-
-                {/** Each folder in project's window */}
-                <div className="folder">
-                    <img src={folderIcon} alt="folder" className="folder-img" />
-                    Project1
-                </div>
-
-                <div className="folder">
-                    <img src={folderIcon} alt="folder" className="folder-img" />
-                    Project2
-                </div>
-
-
-                <div className="folder">
-                    <img src={folderIcon} alt="folder" className="folder-img" />
-                    Project3
-                </div>
-
-            </div>
-        </div>
-    );
+      <FolderIcon
+        title="Food Journal Blog System"
+        subtitle="A web-based blog system built for foodie enthusiasms to explore new food recipes and share their culinary experiences"
+        icon={fileIcon}
+        onClick={() => alert("Open Food Journal Blog System")}
+      />
+    </div>
+  );
 }
 
 export default MyProjects;

@@ -1,13 +1,97 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background: url("./assets/bg/win-wallpaper.png") no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+.desktop {
+  min-height: 100vh;
+  position: relative;
+  padding: 20px;
+}
+
+/* DESKTOP ICON */
+.desktop-icon {
+  width: 80px;
+  text-align: center;
+  cursor: url("assets/cursor/cursor.png"), pointer;
+  margin: 10px;
+}
+
+.desktop-icon p {
+  width: 80px;
+  text-align: center;
+  text-shadow: 1px 1px 2px black;
+  color: white;
+}
+
+.icon {
+  font-size: 40px;
+}
+
+.icon-img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+}
+
+
+/* WINDOW */
+.window {
+  position: absolute;
+  top: 80px;
+  left: 100px;
+  width: 420px;
+  background: #fff8f0;
+  border: 3px solid #333;
+  border-radius: 12px;
+  box-shadow: 6px 6px 0 #000;
+  z-index: 10;
+  font-family: "Comic Sans MS", cursive;
+}
+
+/* WINDOW HEADER */
+.window-header {
+  background: #ffcc70;
+  padding: 8px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 3px solid #333;
+  border-radius: 9px 9px 0;
+  font-weight: bold;
+}
+
+/* WINDOW CONTENT */
+.window-body {
+  padding: 12px;
+}
+
+.folder {
+  background: #fff;
+  display: flex;
+  align-items: center;
+  border: 2px solid #333;
+  border-radius: 10px;
+  padding: 6px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.folder:hover {
+  background: #ffebcb;
+}
+
+.folder img {
+  width: 50px;
+  height: 50px;
+  margin-right: 8px;
+}
+
+.close-btn {
+  width: 24px;
+  height: 24px;
+  cursor: pointer;
 }

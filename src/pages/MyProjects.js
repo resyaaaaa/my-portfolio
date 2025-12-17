@@ -1,4 +1,5 @@
 import folderIcon from "../assets/icons/6.png";
+import closeIcon from "../assets/icons/close.png";
 
 function MyProjects({ onClose }) {
     return (
@@ -8,7 +9,7 @@ function MyProjects({ onClose }) {
                 <span>Projects</span>
 
                 {/** close button */}
-                <img src="{closeIcon}" alt="close" className="close-btn" onClick={onClose}
+                <img src={closeIcon} alt="close" className="close-btn" onClick={onClose}
                 />
 
             </div>
@@ -17,20 +18,22 @@ function MyProjects({ onClose }) {
             <div className="window-body">
 
                 {/** Each folder in project's window */}
-                <div className="folder-img">
-                    <img src={folderIcon} alt="folder" />
-                    <p>folder_1</p>
+                <div className="folder">
+                    <img src={folderIcon} alt="folder" className="folder-img" />
+                    Project1
                 </div>
 
-                <div className="folder-img">
-                    <img src={folderIcon} alt="folder" />
-                    <p>folder_2</p>
-
-                    <div className="folder-img">
-                        <img src={folderIcon} alt="folder" />
-                        <p>folder_3</p>
-                    </div>
+                <div className="folder">
+                    <img src={folderIcon} alt="folder" className="folder-img" />
+                    Project2
                 </div>
+
+
+                <div className="folder">
+                    <img src={folderIcon} alt="folder" className="folder-img" />
+                    Project3
+                </div>
+
             </div>
         </div>
     );

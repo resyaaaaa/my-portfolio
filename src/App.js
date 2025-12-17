@@ -2,7 +2,7 @@ import { useState } from "react";
 import DesktopIcon from "./components/DesktopIcon";
 import MyProjects from "./pages/MyProjects";
 
-import projectIcon from "./assets/icons/1.png";
+import projectIcon from "./assets/icons/4.png";
 
 
 function App() {

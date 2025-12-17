@@ -330,3 +330,18 @@ body,
 .lock-btn:hover {
   background: rgba(255, 255, 255, 0.45);
 }
+
+.sleep-screen {
+  position: fixed;
+  inset: 0;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.sleep-gif {
+  width: 180px;
+  opacity: 0.85;
+}

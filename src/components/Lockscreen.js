@@ -1,6 +1,6 @@
 import profileIcon from "../assets/icons/profile_uwu.png"
 
-function Lockscreen(onUnlock){
+function Lockscreen({onUnlock}){
     return(
         <div className="lock-screen">
             <div className="lock-card">

@@ -1,5 +1,6 @@
 import folderIcon from "../assets/icons/folder.png";
 import GitHubIcon from "../assets/icons/github.png";
+
 function StartExplorer({ onOpenApp, onSleep, onLock }) {
     return (
         <div className="start-explorer">
@@ -26,8 +27,8 @@ function StartExplorer({ onOpenApp, onSleep, onLock }) {
 
                 {/** Start button */}
                 <div className="start-actions">
-                    <button onClick={onSleep} className="btn">Sleep</button>
-                    <button onClick={onLock} className="btn">Lock</button>
+                    <button onClick={onSleep}>Sleep</button>
+                    <button onClick={onLock}>Lock</button>
                 </div>
 
             </div>

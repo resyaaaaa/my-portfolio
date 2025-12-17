@@ -16,6 +16,7 @@ import GitHubIcon from "./assets/icons/github.png";
 import MyProjects from "./pages/MyProjects";
 import MySkills from "./pages/MySkills";
 import MyEducations from "./pages/MyEducations";
+import Sleep from "./pages/Sleep";
 //====================================================================================
 //====================================================================================
 
@@ -121,6 +122,10 @@ function App() {
 
       {isLocked && (
         <Lockscreen onUnlock={() => setIsLocked(false)}/>
+      )}
+      
+      {isSleeping && (
+        <Sleep onWake={() => setIsSleeping(false)}/>
       )}
 
       {/* Taskbar */}

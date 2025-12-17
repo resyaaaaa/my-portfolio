@@ -1,6 +1,7 @@
 import { useState } from "react";
 import DesktopIcon from "./components/DesktopIcon";
 import MyProjects from "./pages/MyProjects";
+import Taskbar from "./components/Taskbar";
 
 import projectIcon from "./assets/icons/4.png";
 
@@ -19,6 +20,9 @@ function App() {
         <MyProjects onClose={() => setOpenWindow(false)}
         />
       )}
+
+      {/** Taskbar */}
+      <Taskbar />
     </div>
   );
 }

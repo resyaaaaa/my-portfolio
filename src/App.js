@@ -10,13 +10,17 @@ import Lockscreen from "./components/Lockscreen";
 import ProjectsIcon from "./assets/icons/1.png";
 import SkillsIcon from "./assets/icons/4.png";
 import EducationsIcon from "./assets/icons/6.png";
-import GitHubIcon from "./assets/icons/github.png";
+import GitHubIcon from "./assets/icons/github2.png";
+import CanvaIcon from "./assets/icons/canva.png";
+import LinkedinIcon from "./assets/icons/linkedin.png";
+import ContactIcon from "./assets/icons/contact.png";
 
 /** Pages */
 import MyProjects from "./pages/MyProjects";
 import MySkills from "./pages/MySkills";
 import MyEducations from "./pages/MyEducations";
 import Sleep from "./pages/Sleep";
+import Contacts from "./pages/ContactMe";
 //====================================================================================
 //====================================================================================
 
@@ -71,6 +75,21 @@ function App() {
         icon={GitHubIcon}
         onDoubleClick={() => window.open("https://github.com/resyaaaaa")}
       />
+      <DesktopIcon
+        label="Linkedin"
+        icon={LinkedinIcon}
+        onDoubleClick={() => window.open("https://www.linkedin.com/in/resyalizatul-omar-83a9a029a/")}
+      />
+      <DesktopIcon
+        label="Canva"
+        icon={CanvaIcon}
+        onDoubleClick={() => window.open("https://www.canva.com/design/DAG9C6VlHUQ/xhLKoLNeUiK33ZhDG3HTvA/edit?utm_content=DAG9C6VlHUQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton")}
+      />
+      <DesktopIcon
+        label="Contact"
+        icon={ContactIcon}
+        onDoubleClick={() => openApp("Contacts")}
+      />
 
       {/* Open Windows */}
       {openApps.includes("Projects") && (
@@ -100,6 +119,16 @@ function App() {
           onClose={() => closeApp("Educations")}
         >
           <MyEducations />
+        </Window>
+      )}
+
+      {openApps.includes("Contacts") && (
+        <Window
+          title="Contacts"
+          isActive={activeApp === "Contacts"}
+          onClose={() => closeApp("Contacts")}
+        >
+          <Contacts />
         </Window>
       )}
 

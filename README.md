@@ -82,7 +82,3 @@ http://localhost:3000
   index.js
   index.css
 ```
-
-
-Feel free to adapt it.
-Just keep it honest.

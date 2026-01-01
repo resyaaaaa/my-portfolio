@@ -5,7 +5,7 @@ body {
   padding: 0;
   height: 100%;
   overflow: hidden;
-  background: url("./assets/bg/1.png") no-repeat center center fixed;
+  background: url("./assets/bg/4.jpg") no-repeat center center fixed;
   background-size: cover;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -144,16 +144,18 @@ body,
 /*============================================================WINDOW*/
 /* WINDOW */
 .window {
-  position: absolute;
-  top: 100px;
-  left: 100px;
-  width: 400px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  max-width: 420px;
   background: #fff8f0;
   border: 3px solid #333;
   border-radius: 12px;
   box-shadow: 6px 6px 0 #000;
   z-index: 10;
   font-family: "Comic Sans MS", cursive;
+  transform: translate(-50%, -50%);
 }
 
 /* WINDOW HEADER */
@@ -171,7 +173,7 @@ body,
 /* WINDOW CONTENT */
 .window-body {
   padding: 12px;
-  max-height: 300px;
+  max-height: 60vh;
   overflow-y: auto;
   pointer-events: auto;
 }

@@ -1,5 +1,5 @@
 /** REUSABLE TASKBAR COMPONENT */
-import startIcon from "../assets/taskbar/windows10_32.png";
+import startIcon from "../assets/taskbar/windows10_2.png";
 import explorerIcon from "../assets/taskbar/file_explorer.png";
 
 function Taskbar({ openApps, activeApp, onAppClick, onStartClick }) {

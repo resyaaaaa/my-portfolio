@@ -7,9 +7,9 @@ import Window from "./components/Window";
 import StartExplorer from "./components/StartExplorer";
 import Lockscreen from "./components/Lockscreen";
 /** Icons */
-import ProjectsIcon from "./assets/icons/1.png";
-import SkillsIcon from "./assets/icons/4.png";
-import EducationsIcon from "./assets/icons/6.png";
+import ProjectsIcon from "./assets/icons/folder.png";
+import SkillsIcon from "./assets/icons/folder.png";
+import EducationsIcon from "./assets/icons/folder.png";
 import GitHubIcon from "./assets/icons/github2.png";
 import CanvaIcon from "./assets/icons/canva.png";
 import LinkedinIcon from "./assets/icons/linkedin.png";
